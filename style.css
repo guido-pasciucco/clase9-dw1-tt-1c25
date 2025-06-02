@@ -1,0 +1,126 @@
+/* CLASE 7 - GRIDS - GRILLAS 
+- ✅ construcción de grillas
+- ✅ columnas, filas y gap: medidas y espaciados para las grillas
+- ✅ justificado y alineado: elems en la grilla
+- ✅ pseudo-clases
+- desafio 7 - OBLIGATORIO - realización en vivo.
+
+
+*/
+
+/* 3 unidades de medida principales - grids
+
+- medidas absolutas - píxeles - ej: 100px
+- medidas relativas - porcentaje - ej: 25% (del ancho del viewport o su contenedor padre)
+- medidas relativas - fracciones - ej: 1fr 2fr 5fr
+
+    - ejs fracciones
+        repeat(5, 1fr) - 1/5
+        repeat(6, 1fr) - 1/6        
+        1fr 2fr 1fr    - 4/4 el 2do se queda con 2/4
+*/
+
+
+/* .grilla{
+    display: grid; /* inicializar una grilla 
+    grid-template-columns: repeat(3, 1fr); configuro COLUMNAS 
+    grid-template-rows: repeat(4, 200px) ; /* configuro FILAS 
+    Gaps - espacios en blanco 
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: center;
+    align-items: center;
+} */
+
+/* 
+.grilla p {
+    padding: 30px;
+} 
+
+.grilla img {
+    width: 100%;
+    height: 100%;
+} */
+
+/* EJEMPLO GRID GENERATOR */
+
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+text-align: center;
+
+}
+
+
+
+.divFooter {
+    grid-area: 5 / 1 / 6 / 6; 
+    background-color: rgb(218, 255, 163);
+}
+.div3 {
+    grid-area: 1 / 1 / 5 / 2; 
+    background-color: rgb(196, 196, 196);
+}
+.div4 {
+    grid-area: 1 / 5 / 5 / 6; 
+    background-color: rgb(196, 196, 196);
+}
+
+
+
+.divMain {
+    grid-area: 1 / 2 / 5 / 5; 
+    padding: 20px;
+}
+
+.divNuestro {
+    background-color: rgb(255, 188, 188);
+    grid-area: 6 / 1 / 7 / 6;
+    /* grid-area (2 coordenadas donde empieza) / (2 coordenadas donde termina) */
+}
+
+
+
+/* SOBREESCRIBIR UN COMPONENTE DE BOOTSTRAP CON CSS NUESTRO. */
+
+.navbar {
+    background-color: rgb(255, 209, 124) !important;
+}
+
+.captionCarousel {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* TRANSFORM Y TRANSITION */
+
+.caja{
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    transition: background-color 3s ease;
+}
+
+.caja:hover{
+    background-color: rgb(255, 255, 0);
+    /* transform: scale(0.5); ESCALA - TAMAÑO DEL ELEMENTO */
+    /* transform: translate(50px, 10px);  TRASLADAR - MOVER OBJ*/
+    /* traslate(valor eje x, valor eje y) */
+    /* transform: rotate(45deg); degrees */
+    transition: background-color 3s ease;
+}
+
+
+/* DESAFIO 8 - OPTATIVO 
+
+CONSIGNAS
+    1. APLICAR BOOTSTRAP
+        1.A - INSTALARLO CON CDN
+        2.B - APLICAR AL MENOS 1 COMPONENTE (NAVBAR, CARD, CARROUSEL, LO QUE QUIERAN...)
+    2. APLICAR ALGUNA ANIMACIÓN
+        2.A Que use HOVER 
+        2.B Que use TRANSFORM (scale, traslate, rotate)
+        2.C Que use TRANSITION
+
+*/
